@@ -32,7 +32,7 @@ const Report: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      let url = 'http://127.0.0.1:5000/api/report?';
+      let url = '/api/report?';
       if (startDate) url += `start_date=${startDate}&`;
       if (endDate) url += `end_date=${endDate}`;
       

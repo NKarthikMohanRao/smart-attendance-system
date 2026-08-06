@@ -41,7 +41,7 @@ const EmployeeDetail: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      let url = 'http://127.0.0.1:5000/api/employee?';
+      let url = '/api/employee?';
       if (empCode) url += `emp_code=${empCode}&`;
       if (startDate) url += `start_date=${startDate}&`;
       if (endDate) url += `end_date=${endDate}`;
@@ -73,7 +73,7 @@ const EmployeeDetail: React.FC = () => {
     if (!window.confirm(`Are you sure you want to delete ${data.selected_emp.name}? This will remove all their data and face encodings.`)) return;
     
     try {
-      const res = await fetch(`http://127.0.0.1:5000/api/employee/${data.selected_emp.emp_code}`, { method: 'DELETE' });
+      const res = await fetch(`/api/employee/${data.selected_emp.emp_code}`, { method: 'DELETE' });
       if (res.ok) {
         alert('Employee deleted successfully');
         window.location.href = '/employee';
