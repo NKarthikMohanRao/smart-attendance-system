@@ -22,7 +22,7 @@ const EmployeeAnalytics: React.FC = () => {
   const fetchAnalytics = async (code: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/analytics/employee/${code}`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'}/api/analytics/employee/${code}`);
       if (!res.ok) throw new Error('Employee not found or no data available.');
       const json = await res.json();
       setData(json);

@@ -32,7 +32,7 @@ const Report: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      let url = '/api/report?';
+      let url = `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'}/api/report?`;
       if (startDate) url += `start_date=${startDate}&`;
       if (endDate) url += `end_date=${endDate}`;
       

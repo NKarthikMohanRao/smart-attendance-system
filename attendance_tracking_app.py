@@ -19,16 +19,8 @@ import database
 from liveness import texture_liveness_score, model_based_liveness_score
 from ml_pipeline import PredictiveHRAnalytics
 
-app = Flask(__name__, static_folder='frontend/dist', static_url_path='/')
+app = Flask(__name__)
 CORS(app)
-
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve(path):
-    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
-        return app.send_static_file(path)
-    else:
-        return app.send_static_file('index.html')
 
 
 def get_db_connection(db_path=None):
@@ -606,7 +598,6 @@ def api_kiosk():
 if __name__ == "__main__":
     print("================================================================")
     print("  Smart Attendance Web Dashboard running on http://127.0.0.1:5000")
-    print("  Serving frontend from frontend/dist")
     print("  Press Ctrl+C to stop.")
     print("================================================================")
     app.run(host="0.0.0.0", port=5000, debug=False)

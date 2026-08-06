@@ -26,7 +26,7 @@ const Dashboard: React.FC = () => {
 
   const fetchData = async (start?: string, end?: string) => {
     try {
-      let url = '/api/summary';
+      let url = `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'}/api/summary`;
       if (start && end) {
         url += `?start_date=${start}&end_date=${end}`;
       }

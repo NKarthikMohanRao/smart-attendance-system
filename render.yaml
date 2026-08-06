@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: smart-attendance-backend
+    env: python
+    buildCommand: |
+      apt-get update && apt-get install -y cmake build-essential libgl1-mesa-glx
+      pip install -r requirements.txt
+    startCommand: gunicorn -w 1 -b 0.0.0.0:$PORT attendance_tracking_app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0

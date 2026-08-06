@@ -69,7 +69,7 @@ const Register: React.FC = () => {
     }
 
     try {
-      const response = await fetch('/api/register', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'}/api/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ emp_code, name, department, designation, images })
