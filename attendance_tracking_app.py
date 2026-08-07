@@ -22,6 +22,8 @@ from ml_pipeline import PredictiveHRAnalytics
 app = Flask(__name__)
 CORS(app)
 
+# Initialize database tables
+database.init_db()
 
 def get_db_connection(db_path=None):
     """Returns a SQLite connection to attendance.db with row_factory=sqlite3.Row."""

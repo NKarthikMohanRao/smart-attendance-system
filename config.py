@@ -3,7 +3,10 @@ Central configuration for the smart attendance system.
 Tune these values to your camera/lighting after testing.
 """
 
-DB_PATH = "attendance.db"
+import os
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+DB_PATH = os.path.join(BASE_DIR, "attendance.db")
 
 # Face matching: face_recognition's face_distance is 0 (identical) to ~1 (very different).
 # Library default tolerance is 0.6; we go a bit stricter to cut down false accepts.
