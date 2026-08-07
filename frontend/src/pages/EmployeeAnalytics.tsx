@@ -135,23 +135,23 @@ const EmployeeAnalytics: React.FC = () => {
             {/* Salary Impact Analytics */}
             <div className="card" style={{ gridColumn: '1 / -1', borderTop: '4px solid #10B981' }}>
               <h3>💰 Estimated Salary Impact Analytics</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>Based on $25/hr standard rate simulation</p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>Based on ₹2000/hr standard rate simulation</p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                 <div style={{ flex: 1, padding: '1rem', background: 'var(--bg-body)', borderRadius: 'var(--radius-sm)' }}>
                   <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Base Earnings</div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 600 }}>${data.salary_impact.base_earnings}</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 600 }}>₹{data.salary_impact.base_earnings}</div>
                 </div>
                 <div style={{ flex: 1, padding: '1rem', background: 'rgba(16, 185, 129, 0.1)', borderRadius: 'var(--radius-sm)' }}>
                   <div style={{ fontSize: '0.9rem', color: '#10B981' }}>+ Overtime</div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 600, color: '#10B981' }}>${data.salary_impact.overtime_earnings}</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 600, color: '#10B981' }}>₹{data.salary_impact.overtime_earnings}</div>
                 </div>
                 <div style={{ flex: 1, padding: '1rem', background: 'rgba(239, 68, 68, 0.1)', borderRadius: 'var(--radius-sm)' }}>
                   <div style={{ fontSize: '0.9rem', color: '#EF4444' }}>- Late Penalty</div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 600, color: '#EF4444' }}>${data.salary_impact.late_penalty}</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 600, color: '#EF4444' }}>₹{data.salary_impact.late_penalty}</div>
                 </div>
                 <div style={{ flex: 1, padding: '1rem', background: 'var(--primary)', color: '#fff', borderRadius: 'var(--radius-sm)' }}>
                   <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)' }}>Net Estimate</div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 600 }}>${data.salary_impact.estimated_total}</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 600 }}>₹{data.salary_impact.estimated_total}</div>
                 </div>
               </div>
             </div>

@@ -49,3 +49,5 @@ STANDARD_SHIFT_HOURS = 9.0
 # Minimum working shift duration (hours) before triggering an under-shift alert.
 MIN_SHIFT_HOURS = 8.0
 
+# Base hourly rate for salary simulation (in rupees)
+BASE_HOURLY_RATE = 2000.0
